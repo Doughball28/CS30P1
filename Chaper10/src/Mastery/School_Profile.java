@@ -82,14 +82,58 @@ public class School_Profile {
 		LN.setBounds(122, 33, 113, 20);
 		frame.getContentPane().add(LN);
 		LN.setColumns(10);
-		
+		String grade = ("");
 		JComboBox Grade = new JComboBox();
+		Grade.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(Grade.getSelectedItem().equals("10"))
+				{
+					String grade = ("10");
+				}
+				if(Grade.getSelectedItem().equals("11"))
+				{
+					String grade = ("11");
+				}
+				if(Grade.getSelectedItem().equals("12"))
+				{
+					String grade = ("12");
+				}
+			}
+		});
 		Grade.setModel(new DefaultComboBoxModel(new String[] {"10", "11", "12"}));
 		Grade.setBounds(10, 83, 74, 22);
 		frame.getContentPane().add(Grade);
-		
+		String school = ("");
 		JComboBox School = new JComboBox();
-		
+		School.addActionListener(new ActionListener() 
+		{
+			public void actionPerformed(ActionEvent e) 
+			{
+				if(School.getSelectedItem().equals("School1"))
+				{
+					String school = ("School1");
+				}
+				if(School.getSelectedItem().equals("School2"))
+				{
+					String school = ("School2");
+				}
+				if(School.getSelectedItem().equals("School3"))
+				{
+					String school = ("School3");
+				}
+				if(School.getSelectedItem().equals("School4"))
+				{
+					String school = ("School4");
+				}
+				if(School.getSelectedItem().equals("School5"))
+				{
+					String school = ("School5");
+				}
+				
+			}
+		});
 		School.setModel(new DefaultComboBoxModel(new String[] {"School1", "School2", "School3", "School4", "School5"}));
 		School.setBounds(131, 83, 104, 22);
 		frame.getContentPane().add(School);
@@ -103,10 +147,14 @@ public class School_Profile {
 		frame.getContentPane().add(Image);
 		
 		JButton Submit = new JButton("Submit");
-		Submit.addActionListener(new ActionListener() {
+		Submit.addActionListener(new ActionListener() 
+		{
 			public void actionPerformed(ActionEvent e) 
 			{
+				String firstN = FN.getText();
+				String lastN = LN.getText();
 				
+				description.setText(firstN + " " + lastN +  "is in grade: " + grade + "and goes to" + school);
 			}
 		});
 		Submit.setBounds(271, 11, 89, 134);
